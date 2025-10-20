@@ -8,3 +8,7 @@
 5.-En el panel izquiedo vamos a Pages
 6.-Activamos pages desde la rama main
 7.-ESPERAMOS CINCO MINUTOS
+
+https://[tuusuario].github.io/[repo]
+
+https://ElOrange12.github.io/Pagina-web
