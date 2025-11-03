@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Curriculum</title>
+        <meta charset="utf-8">
+        <style>
+        	html{background:antiquewhite; font-family:sans-serif}
+        	body{background:white; margin:auto; min-height: 600px; display:flex; width:700px}
+        	#izquierda{
+                flex:1;
+                background:gainsboro;
+                padding:20px 20px 20px 40px;
+                display:flex;
+                flex-direction:column;
+                align-items: flex-start
+            }
+            #izquierda img{width:70%; margin-bottom:20px}
+            #izquierda p {
+                font-size: 13px;
+                line-height: 1.6;
+                margin-top: 0;
+                margin-bottom: 100px;
+                text-align: left;
+            }
+            #izquierda h3 {
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+                font-size: 14px;
+                margin-bottom: 10px;
+                color: black;
+            }
+            #contacto ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            #contacto li {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 11px;
+                margin-bottom: 10px;
+            }
+            #contacto li::before {
+                font-family: "Segoe UI Symbol";
+                color: #333;
+                font-size: 14px;
+            }
+
+            /* Iconos según orden de las líneas */
+            #contacto li:nth-child(1)::before { content: "📞"; }
+            #contacto li:nth-child(2)::before { content: "✉️"; }
+            #contacto li:nth-child(3)::before { content: "📍"; }
+        	#derecha{
+                flex:4;
+                background:white;
+                padding:20px 20px 20px 40px;;
+                margin:auto
+            }
+            #derecha h3 {
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+                font-size: 14px;
+                margin-bottom: 10px;
+                color: black;
+            }
+            #derecha h4 {
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+                font-size: 10px;
+                margin-bottom: 10px;
+                color: black;
+            }
+            #derecha p {
+                font-size: 12px;
+                line-height: 1.6;
+                text-align: left;
+            }
+            #encabezado p{
+                font-size: 12px;
+                line-height: 1.6;
+                margin-bottom: 40px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="izquierda">
+            <img src = "image.png" alt= "Daniel Oliveira Vidal">
+            <div id="sobremi">
+                <h3>Sobre mí</h3>
+                <p>Estudiante de desarrollo de aplicaciones multiplataforma (DAM), me considero una persona aplicada, trabajadora y ordenada, busco mi primera experiencia laboral en el sector.</p>
+            </div>
+            <div id="contacto">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>607048085</li>
+                    <li>danieloliveiravidal12@gmail.com</li>
+                    <li>València</li>
+                </ul>
+            </div>
+        </div>
+        <div id="derecha">
+            <div id="encabezado">
+                <h1>Daniel Oliveira Vidal</h1>
+                <p>Estudiante</p>
+            </div>
+            <div id="educacion">
+                <h3>EDUCACIÓN</h3>
+                <h4>CEAC FP - Valencia</h4>
+                
+                <p>2025-2027</p>
+                <p>Grado superior en Desarrollo de Aplicaciones Multiplataforma - En curso</p>
+                <h4>Colegio Ntra. Sra. de Fátima</h4>
+                <p>2023 - 2025</p>
+                <p>Bachillerato Tecnologico</p>
+            </div>
+            <div id="idiomas">
+            <h3>IDIOMAS</h3>
+            <p>Inglés - Nivel medio (No certificado)</p>
+            <p>Valenciano - Nivel B2</p>
+            <p>Español - Nativo</p>
+            </div>
+        </div>
+    </body>
+</html>
