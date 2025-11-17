@@ -10,9 +10,9 @@
         <script>
             for (let anyo = 2000; anyo <= 2025; anyo++){
                 for(let mes = 0; mes <= 11; mes++){
-                    document.write('<h1>2025-'+(mes+1)+'</h1>');
+                    document.write('<h1>'+anyo+'-'+(mes+1)+'</h1>');
                     document.write('<section>');
-                    const dias_en_mes = new Date(2025, mes+1, 0).getDate();
+                    const dias_en_mes = new Date(anyo, mes+1, 0).getDate();
                     for(let dia = 1; dia <= dias_en_mes; dia++){
                         document.write('<div>'+dia+'</div>');
                     }
