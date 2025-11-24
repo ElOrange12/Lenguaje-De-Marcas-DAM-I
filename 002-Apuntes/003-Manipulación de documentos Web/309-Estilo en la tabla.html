@@ -1,0 +1,37 @@
+<!Doctype html>
+<html>
+	<head>
+		<style>
+			table{border:3px solid blue;border-collapse:collapse;background:white;}
+			table tr:first-child{background:blue;color:white;}
+			table tr td{padding:10px;border-right:1px solid blue;}
+		</style>
+	</head>
+	<body>
+		<nav></nav>
+		<script>
+			// En primer lugar cargamos datos de un json
+			fetch('300-tabla.json')
+			.then(function(respuesta){
+				return respuesta.json();	// La resp viene en JSON
+			})
+			.then(function(datos){
+				let contenedor = document.querySelector('body');
+				let tabla = document.createElement('table');
+				contenedor.appendChild(tabla);		// Al cuerpo le añado la tabla
+				// Para cada una de las lineas del json:
+				datos.forEach(function(linea){
+					// Primero creo una fila - table row
+					let fila = document.createElement('tr');
+					// Ahora creo tanta celdas como sea necesario
+					linea.forEach(function(celda){
+						let data = document.createElement('td');
+						data.textContent = celda
+						fila.appendChild(data);
+					})
+					tabla.appendChild(fila)
+				})
+			})
+		</script>
+	</body>
+</html>

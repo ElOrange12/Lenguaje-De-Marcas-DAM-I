@@ -1,0 +1,63 @@
+<!Doctype html>
+<html>
+	<head>
+		<style>
+			html, body{height:100%; padding:0px; margin:0px; display:flex; width:100%}
+			nav{background:darkorange; flex:1; color:white; padding:20px}
+			main{flex:4; background:AntiqueWhite; padding:20px}
+		</style>
+	</head>
+	<body>
+		<nav>Orange | Panel</nav>
+		<style>
+			nav{display:flex; flex-direction:column; gap:20px;}
+			nav button{border:none; background:AntiqueWhite; color:darkorange; padding:20px; text-transform:uppercase;}
+		</style>
+		<script>
+			// Ves y busca
+			fetch('300-botones.json')
+			.then(function(respuesta){
+				return respuesta.json();	// La resp viene en JSON
+			})
+			.then(function(datos){
+				// Y luego creamos botones a partir de lo que hay en el json
+				let contenedor = document.querySelector('nav')
+				datos.forEach(function(texto_boton){
+					let boton = document.createElement("button")
+					boton.textContent = texto_boton;
+					contenedor.appendChild(boton);
+				})
+			})
+		</script>
+		<main>Orange | Tablas</main>
+		<style>
+			table{border:3px solid darkorange;border-collapse:collapse;background:Antiquewhite;}
+			table tr:first-child{background:darkorange;color:Antiquewhite;}
+			table tr td{padding:10px;border-right:1px solid darkorange;}
+		</style>
+		<script>
+			// En primer lugar cargamos datos de un json
+			fetch('300-tabla.json')
+			.then(function(respuesta){
+				return respuesta.json();	// La resp viene en JSON
+			})
+			.then(function(datos){
+				let contenedor = document.querySelector('main');
+				let tabla = document.createElement('table');
+				contenedor.appendChild(tabla);		// Al cuerpo le añado la tabla
+				// Para cada una de las lineas del json:
+				datos.forEach(function(linea){
+					// Primero creo una fila - table row
+					let fila = document.createElement('tr');
+					// Ahora creo tanta celdas como sea necesario
+					linea.forEach(function(celda){
+						let data = document.createElement('td');
+						data.textContent = celda
+						fila.appendChild(data);
+					})
+					tabla.appendChild(fila)
+				})
+			})
+		</script>
+	</body>
+</html>
