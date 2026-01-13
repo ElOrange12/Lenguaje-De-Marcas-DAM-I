@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			.cuadrado{width:50px; height:50px; position:absolute; transition:all 0.5s}
+			table{border:1px solid grey; background:white; position:fixed; right:10px; top:10px; width:200px}
+			table tr td{border-bottom:1px solid grey; padding:5px;}
+		</style>
+	</head>
+	<body>
+		<button id='iniciar'>Iniciar juego</button>
+		<button id='parar'>Parar juego</button>
+		<div id='zona_juego'></div>
+		<script>
+			// Declaro variables globales
+			let temporizador;
+			
+			// Creo la tabla para el registro (Manipulacion de tabla)
+			let tabla = document.createElement('table');
+			document.querySelector('body').appendChild(tabla);
+
+			// Botones de control
+			document.querySelector('#iniciar').onclick = function(){
+				bucle();
+			}
+			
+			document.querySelector('#parar').onclick = function(){
+				clearTimeout(temporizador);
+			}
+
+			// Fijaos que llamo a la función desde dentro de la función (Bucle infinito / Retraso)
+			function bucle(){
+				// Crear un elemento (Crear y eliminar elementos dinámicamente)
+				let elemento = document.createElement('div');
+				elemento.classList.add('cuadrado');
+				
+				// Posición aleatoria (Minijuego)
+				elemento.style.left = Math.random()*800+'px';
+				elemento.style.top = Math.random()*600+'px';
+				
+				// Color aleatorio (basado en 409-Creador.html)
+				let rojo = Math.round(Math.random()*255);
+				let verde = Math.round(Math.random()*255);
+				let azul = Math.round(Math.random()*255);
+				elemento.style.background = 'rgb('+rojo+','+verde+','+azul+')';
+				
+				// Añado el elemento al body
+				document.querySelector('#zona_juego').appendChild(elemento);
+
+				// Registro en la tabla
+				let fila = document.createElement('tr');
+				fila.innerHTML = '<td>Elemento creado</td>';
+				tabla.appendChild(fila);
+
+				// Cuando hagas click sobre el elemento... (Evento click para eliminar)
+				elemento.onclick = function(){
+					this.remove(); // Elimino el elemento
+					
+					// Elimino la fila correspondiente de la tabla (Manipular una tabla)
+					fila.remove(); 
+				}
+
+				clearTimeout(temporizador); // Elimino temporizador para no acumular
+				temporizador = setTimeout('bucle()', 1000); // Llamo a bucle de nuevo
+			}
+		</script>
+	</body>
+</html>

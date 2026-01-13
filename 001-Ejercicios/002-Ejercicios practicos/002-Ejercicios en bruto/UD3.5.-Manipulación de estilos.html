@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			.rojo {
+			    background: rgb(255, 200, 200);
+			}
+
+			.verde {
+			    background: rgb(200, 255, 200);
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="entrada">
+		<p class="rojo">Este es un párrafo o parágrafo</p>
+		<script>
+			document.getElementById('entrada').addEventListener('keyup', function() {
+			    let valor = this.value;
+			    let longitud = valor.length;
+
+			    if (longitud == 9) {
+			        document.querySelector("p").classList.add("verde");
+			        document.querySelector("p").classList.remove("rojo");
+			    } else {
+			        document.querySelector("p").classList.remove("verde");
+			        document.querySelector("p").classList.add("rojo");
+			    }
+			});
+		</script>
+	</body>
+</html>
