@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persona xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="002-esquema.xsd">
+  <nombre>Juan</nombre>
+  <apellidos>Garcia Lopez</apellidos>
+  <telefonos>
+    <telefono>987654321</telefono>
+  </telefonos>
+</persona>
